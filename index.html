@@ -22,7 +22,6 @@
         <div class="panel-head">
           <h2 id="input-title">スタッフ <span id="staff-count" class="count"></span></h2>
           <div class="panel-tools">
-            <button type="button" id="sample" class="link">サンプル</button>
             <button type="button" id="clear" class="link">クリア</button>
           </div>
         </div>
@@ -36,14 +35,12 @@
         <div class="panel-foot">
           <p id="input-error" class="input-error" role="alert"></p>
           <button type="button" id="make" class="btn btn-primary btn-block">シフトを作る</button>
-          <p class="hint">入力内容はこの端末のブラウザにだけ保存されます。</p>
         </div>
       </aside>
 
       <main class="content">
         <div id="empty" class="empty">
           <p>スタッフの勤務時間を入力して「シフトを作る」を押してください。</p>
-          <p class="sub">レジ1名・お点前2名・ミルク1名・残りはサポート。8時〜18時を1時間ごとに、全員が均等に回るよう割り当てます。</p>
         </div>
 
         <section id="result" hidden>
@@ -67,8 +64,7 @@
             <li><i class="sw role-break"></i>休憩</li>
           </ul>
 
-          <h2 class="section-title">役職の回数</h2>
-          <p class="hint">実績 / 期待回数。期待回数は、勤務時間とその時間帯の人数から計算した公平な回数です。</p>
+          <h2 class="section-title">役職の回数 <span class="count">実績 / 目安</span></h2>
           <div class="table-wrap"><table id="counts" class="grid counts-table"></table></div>
         </section>
       </main>

@@ -4,25 +4,11 @@ const STORAGE_KEY = 'shift-maker:v1';
 const TIMES = [];
 for (let h = 7; h <= 19; h += 0.5) TIMES.push(h);
 
-// 架空のサンプル（実在の人のデータは入れない）
-const SAMPLE = [
-  { name: 'スタッフA', start: 7, end: 13 },
-  { name: 'スタッフB', start: 7, end: 13 },
-  { name: 'スタッフC', start: 8, end: 18 },
-  { name: 'スタッフD', start: 8, end: 17 },
-  { name: 'スタッフE', start: 8.5, end: 14.5 },
-  { name: 'スタッフF', start: 11, end: 17 },
-  { name: 'スタッフG', start: 13, end: 19 },
-  { name: 'スタッフH', start: 14, end: 19 },
-  { name: 'スタッフI', start: 15.5, end: 19 },
-];
-
 const $ = (id) => document.getElementById(id);
 const els = {
   date: $('date'),
   list: $('staff-list'),
   add: $('add'),
-  sample: $('sample'),
   clear: $('clear'),
   make: $('make'),
   remake: $('remake'),
@@ -308,11 +294,6 @@ els.add.addEventListener('click', () => {
   changed(true);
   const inputs = els.list.querySelectorAll('input.name');
   inputs[inputs.length - 1]?.focus();
-});
-els.sample.addEventListener('click', () => {
-  if (state.staff.length && !confirm('今の入力をサンプルに置き換えますか？')) return;
-  state.staff = SAMPLE.map((s) => ({ ...s }));
-  changed(true);
 });
 els.clear.addEventListener('click', () => {
   if (!state.staff.length || !confirm('スタッフを全部消しますか？')) return;
